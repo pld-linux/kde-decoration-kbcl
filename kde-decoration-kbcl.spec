@@ -19,12 +19,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define         _htmldir        /usr/share/doc/kde/HTML
 
 %description
-k3dnomore is one of more creative kwin decorations found on kde-look,
-includes configuration module for kcontrol.
+KBCL kwin decoration: Keramik Based Crystal Luna.
 
 %description -l pl
-k3dnomore to jedna z najbardziej kreatywnych dekoracji kwin, jakie
-mo¿na znale¼æ na kde-look. Zawiera modu³ konfiguracyjny dla kcontrol.
+Dekoracja kwin KBCL - Keramik Based Crystal Luna (oparta na Keramiku).
 
 %prep
 %setup -q -n %{_decoration}-%{version}
@@ -38,7 +36,9 @@ kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT

@@ -13,6 +13,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	freetype-devel
 BuildRequires:	qt-devel >= 3.0.5
+BuildRequires:	kdebase-devel
 Requires:	kdelibs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,6 +32,7 @@ Dekoracja kwin KBCL - Keramik Based Crystal Luna (oparta na Keramiku).
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
+%{__libtoolize}
 %configure
 %{__make}
 

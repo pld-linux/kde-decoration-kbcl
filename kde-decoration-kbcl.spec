@@ -14,10 +14,9 @@ BuildRequires:	unsermake
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	kdebase-desktop-libs >= 9:3.2.0
+BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	kdebase-desktop-libs >= 9:3.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define         _htmldir        /usr/share/doc/kde/HTML
 
 %description
 A mild-colored and convexed clone of Luna from Windows XP.
@@ -30,8 +29,8 @@ i ³agodniejszym doborem kolorów.
 %setup -q -n %{_decoration}-%{version}
 
 %build
-cp -f %{_datadir}/automake/config.sub admin
-export UNSERMAKE=%{_datadir}/unsermake/unsermake
+cp -f /usr/share/automake/config.sub admin
+export UNSERMAKE=/usr/share/unsermake/unsermake
 %{__make} -f Makefile.cvs
 
 %configure \
@@ -44,7 +43,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir="%{_kdedocdir}"
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT

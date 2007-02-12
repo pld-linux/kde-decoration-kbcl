@@ -1,6 +1,6 @@
 %define		_decoration 	kbcl
 Summary:	Kwin decoration - %{_decoration}
-Summary(pl):	Dekoracja kwin - %{_decoration}
+Summary(pl.UTF-8):   Dekoracja kwin - %{_decoration}
 Name:		kde-decoration-%{_decoration}
 Version:	1.0.8
 Release:	3
@@ -21,9 +21,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A mild-colored and convexed clone of Luna from Windows XP.
 
-%description -l pl
-Klon dekoracji Luna znanej z Windows XP z dodanym poczuciem wypuk≥o∂ci
-i ≥agodniejszym doborem kolorÛw.
+%description -l pl.UTF-8
+Klon dekoracji Luna znanej z Windows XP z dodanym poczuciem wypuk≈Ço≈õci
+i ≈Çagodniejszym doborem kolor√≥w.
 
 %prep
 %setup -q -n %{_decoration}-%{version}
